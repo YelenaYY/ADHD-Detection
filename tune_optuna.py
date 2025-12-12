@@ -34,24 +34,25 @@ from transformer import SpatioTemporalADHDModel
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Adjust these paths if needed
+ROOT = Path(__file__).resolve().parent
 SITE_CONFIG = {
-        "NYU": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/NYU_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/NYU_labels.csv",
-        },
-        "NEURO": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/NEURO_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/NEURO_labels.csv",
-        },
-        "OHSU": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/OHSU_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/OHSU_labels.csv",
-        },
-        "PEKING": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/PEKING_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/PEKING_labels.csv",
-        },
-    }
+    "NYU": {
+        "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "NYU_roi_timeseries.npy"),
+        "label_csv": str(ROOT / "data" / "NYU_labels.csv"),
+    },
+    "NEURO": {
+        "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "NEURO_roi_timeseries.npy"),
+        "label_csv": str(ROOT / "data" / "NEURO_labels.csv"),
+    },
+    "OHSU": {
+        "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "OHSU_roi_timeseries.npy"),
+        "label_csv": str(ROOT / "data" / "OHSU_labels.csv"),
+    },
+    "PEKING": {
+        "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "PEKING_roi_timeseries.npy"),
+        "label_csv": str(ROOT / "data" / "PEKING_labels.csv"),
+    },
+}
 
 N_EPOCHS = 30
 EXPECTED_ROIS = 90

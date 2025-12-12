@@ -1,0 +1,19 @@
+name: adhd-detection
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - optuna
+  - pytorch
+  - pip:
+      - kagglehub
+      - optuna-dashboard
+
+
+E

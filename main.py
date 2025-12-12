@@ -3,6 +3,7 @@
 Training driver for SpatioTemporal ADHD Transformer on ADHD-200 ROI time series.
 """
 
+from pathlib import Path
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -75,22 +76,23 @@ def evaluate(
 
 def main():
     # ---- Config -------------------------------------------------------------
+    ROOT = Path(__file__).resolve().parent
     site_config = {
         "NYU": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/NYU_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/NYU_labels.csv",
+            "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "NYU_roi_timeseries.npy"),
+            "label_csv": str(ROOT / "data" / "NYU_labels.csv"),
         },
         "NEURO": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/NEURO_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/NEURO_labels.csv",
+            "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "NEURO_roi_timeseries.npy"),
+            "label_csv": str(ROOT / "data" / "NEURO_labels.csv"),
         },
         "OHSU": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/OHSU_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/OHSU_labels.csv",
+            "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "OHSU_roi_timeseries.npy"),
+            "label_csv": str(ROOT / "data" / "OHSU_labels.csv"),
         },
         "PEKING": {
-            "roi_npy": "/home/yelena/Desktop/Git/ADHD-Detection/data/processed/roi_tensor/PEKING_roi_timeseries.npy",
-            "label_csv": "/home/yelena/Desktop/Git/ADHD-Detection/data/PEKING_labels.csv",
+            "roi_npy": str(ROOT / "data" / "processed" / "roi_tensor" / "PEKING_roi_timeseries.npy"),
+            "label_csv": str(ROOT / "data" / "PEKING_labels.csv"),
         },
     }
 
